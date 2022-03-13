@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Parking List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of parkings">
+      <ion-avatar slot="start">
+        <img [src]="p.photo" *ngIf="p.photo">
+        <img src="../../assets/img/no-image.png" *ngIf="!p.photo">
+      </ion-avatar>
+
+      <ion-label>
+        <h2>{{p.name}}</h2>
+
+        <p ion-text>Distance : {{p.distance}} km.</p>
+        <p ion-text>Available : {{p.available}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
